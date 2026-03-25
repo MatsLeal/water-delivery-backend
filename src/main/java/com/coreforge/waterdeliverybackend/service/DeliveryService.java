@@ -1,5 +1,6 @@
 package com.coreforge.waterdeliverybackend.service;
 
+import com.coreforge.waterdeliverybackend.exception.ResourceNotFoundException;
 import com.coreforge.waterdeliverybackend.model.Delivery;
 import com.coreforge.waterdeliverybackend.repository.DeliveryRepository;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,7 @@ public class DeliveryService {
 
     public Delivery updateDelivery(Long id, Delivery updated) {
         Delivery delivery = deliveryRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Delivery not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Delivery not found with id: " + id));
 
         delivery.setQuantity(updated.getQuantity());
         delivery.setDate(updated.getDate());
