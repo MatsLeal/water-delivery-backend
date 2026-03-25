@@ -15,6 +15,12 @@ This project demonstrates **clean architecture, validation, Dockerized infrastru
 
 ---
 
+## Live Demo
+
+- API Base URL: https://water-delivery-backend-66082310358.us-central1.run.app
+- Swagger UI: https://water-delivery-backend-66082310358.us-central1.run.app/swagger-ui.html
+- Health Check: https://water-delivery-backend-66082310358.us-central1.run.app/health
+
 ## ⚙️ Tech Stack
 
 - Java 17
