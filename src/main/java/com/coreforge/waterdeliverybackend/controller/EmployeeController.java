@@ -3,6 +3,7 @@ package com.coreforge.waterdeliverybackend.controller;
 import com.coreforge.waterdeliverybackend.dto.CreateEmployeeRequest;
 import com.coreforge.waterdeliverybackend.model.Employee;
 import com.coreforge.waterdeliverybackend.service.EmployeeService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,7 @@ public class EmployeeController {
     }
 
     @PostMapping
+    @Operation(summary = "Create employee", description = "Creates a new employee record")
     public Employee createEmployee(@Valid @RequestBody CreateEmployeeRequest request) {
         Employee employee = new Employee();
         employee.setName(request.getName());
