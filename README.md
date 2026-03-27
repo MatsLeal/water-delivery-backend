@@ -4,23 +4,83 @@
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-Backend-green)]()
 [![Docker](https://img.shields.io/badge/Docker-Enabled-blue)]()
 [![MySQL](https://img.shields.io/badge/MySQL-8-orange)]()
+# Water Delivery System (Full Stack)
+
+This project is a full-stack operational system built to demonstrate real-world backend engineering, frontend integration, and cloud deployment.
 
 ---
 
-## 🧠 Overview
+## 🔴 Live Demo
 
-A production-style backend system built with **Spring Boot** to manage employees and delivery operations.
+Frontend (Firebase Hosting):
+https://water-delivery-491303-3757a.web.app/
 
-This project demonstrates **clean architecture, validation, Dockerized infrastructure, and API best practices**.
+Backend API (Cloud Run):
+https://water-delivery-backend-66082310358.us-central1.run.app
+
+Swagger Docs:
+https://water-delivery-backend-66082310358.us-central1.run.app/swagger-ui.html
 
 ---
 
-## Live Demo
+## 🧩 Architecture
 
-- API Base URL: https://water-delivery-backend-66082310358.us-central1.run.app
-- Swagger UI: https://water-delivery-backend-66082310358.us-central1.run.app/swagger-ui.html
-- Health Check: https://water-delivery-backend-66082310358.us-central1.run.app/health
+Vue SPA (Firebase Hosting)
+→ Spring Boot API (Cloud Run)
+→ MySQL Database (Cloud SQL)
 
+Designed for production-style deployment with environment-based configuration and real debugging workflows.
+
+---
+
+## ⚙️ Tech Stack
+
+Backend:
+- Java
+- Spring Boot
+- MySQL
+- Cloud Run
+
+Frontend:
+- Vue.js (Vite)
+- Firebase Hosting
+
+Infrastructure:
+- Google Cloud Platform (GCP)
+- Cloud SQL
+- Cloud Run
+
+---
+
+## 🚀 Features
+
+- Employee management (CRUD)
+- Live API integration
+- Delete operations with real-time UI updates
+- Cloud-deployed backend and frontend
+- Production logging and debugging setup
+
+---
+
+## 🧠 Purpose
+
+This project demonstrates the ability to design, build, debug, and deploy a complete system end-to-end.
+
+Focus areas:
+- Backend reliability
+- API design
+- Cloud deployment
+- Full-stack integration
+
+---
+
+## 📌 Notes
+
+This is not a toy project. It is structured to reflect real-world engineering practices including:
+- Environment-based configuration
+- Cloud database connectivity
+- Production debugging via logs
+- Separation of frontend and backend systems
 ## ⚙️ Tech Stack
 
 - Java 17

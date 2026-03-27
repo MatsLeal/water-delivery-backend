@@ -25,6 +25,7 @@ public class DeliveryController {
         delivery.setEmployeeId(request.getEmployeeId());
         delivery.setQuantity(request.getQuantity());
         delivery.setDate(request.getDate());
+        delivery.setNotes(request.getNotes());
 
         return deliveryService.createDelivery(delivery);
     }
@@ -39,7 +40,18 @@ public class DeliveryController {
         Delivery delivery = new Delivery();
         delivery.setQuantity(request.getQuantity());
         delivery.setDate(request.getDate());
+        delivery.setNotes(request.getNotes());
 
         return deliveryService.updateDelivery(id, delivery);
+    }
+
+    @GetMapping
+    public List<Delivery> getAllDeliveries() {
+        return deliveryService.getAllDeliveries();
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteDelivery(@PathVariable Long id) {
+        deliveryService.deleteDelivery(id);
     }
 }

@@ -2,10 +2,19 @@ package com.coreforge.waterdeliverybackend.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class UpdateDeliveryRequest {
+
 
     @NotNull(message = "Quantity is required")
     @Min(value = 1, message = "Quantity must be at least 1")
@@ -14,27 +23,10 @@ public class UpdateDeliveryRequest {
     @NotNull(message = "Date is required")
     private LocalDate date;
 
-    public UpdateDeliveryRequest() {
-    }
+    @NotNull(message = "Notes are required")
+    private String notes;
 
-    public UpdateDeliveryRequest(Integer quantity, LocalDate date) {
-        this.quantity = quantity;
-        this.date = date;
-    }
+ 
 
-    public Integer getQuantity() {
-        return quantity;
-    }
 
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
 }

@@ -25,4 +25,7 @@ public class Delivery {
 
     @Column(nullable = false)
     private LocalDate date;
+
+    @Column()
+    private String notes;
 }

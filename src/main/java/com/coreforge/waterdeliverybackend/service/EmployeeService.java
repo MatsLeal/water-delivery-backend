@@ -28,4 +28,13 @@ public class EmployeeService {
         return employeeRepository.findByRud(rud)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found with RUD: " + rud));
     }
+
+
+    public void deleteEmployee(Long id) {
+        if (!employeeRepository.existsById(id)) {
+            throw new ResourceNotFoundException("Employee not found with id: " + id);
+        }
+
+        employeeRepository.deleteById(id);
+    }
 }

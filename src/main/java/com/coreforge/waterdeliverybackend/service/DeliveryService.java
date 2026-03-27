@@ -33,4 +33,13 @@ public class DeliveryService {
 
         return deliveryRepository.save(delivery);
     }
+    public List<Delivery> getAllDeliveries() {
+        return deliveryRepository.findAll();
+    }
+    public void deleteDelivery(Long id) {
+        if (!deliveryRepository.existsById(id)) {
+            throw new RuntimeException("Delivery not found with id: " + id);
+        }
+        deliveryRepository.deleteById(id);
+    }
 }

@@ -29,6 +29,10 @@ public class EmployeeController {
 
         return employeeService.createEmployee(employee);
     }
+    @DeleteMapping("/{id}")
+    public void deleteEmployee(@PathVariable Long id) {
+        employeeService.deleteEmployee(id);
+    }
 
     @GetMapping
     public List<Employee> getAllEmployees() {
@@ -39,4 +43,8 @@ public class EmployeeController {
     public Employee getByRud(@PathVariable String rud) {
         return employeeService.getByRud(rud);
     }
+
+
+
+
 }

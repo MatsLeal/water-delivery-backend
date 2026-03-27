@@ -15,7 +15,8 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins(
-                                "https://water-delivery-backend-66082310358.us-central1.run.app",
+                                "https://water-delivery-491303-3757a.web.app",
+                                "https://water-delivery-491303-3757a.firebaseapp.com",
                                 "https://landingpage-delta27.web.app",
                                 "http://localhost:5173",
                                 "http://localhost:8080"
