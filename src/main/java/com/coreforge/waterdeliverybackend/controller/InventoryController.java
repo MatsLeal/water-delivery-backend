@@ -1,7 +1,9 @@
 package com.coreforge.waterdeliverybackend.controller;
 
+import com.coreforge.waterdeliverybackend.dto.InventoryQuantityRequest;
 import com.coreforge.waterdeliverybackend.model.Inventory;
 import com.coreforge.waterdeliverybackend.service.InventoryService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,8 +22,8 @@ public class InventoryController {
     }
 
     @PutMapping("/restock")
-    public Inventory restock(@RequestParam Integer quantity) {
-        return inventoryService.restock(quantity);
+    public Inventory restock(@Valid @RequestBody InventoryQuantityRequest request) {
+        return inventoryService.restock(request.getQuantity());
     }
 
     @PutMapping("/set")

@@ -7,6 +7,9 @@ import com.coreforge.waterdeliverybackend.model.Employee;
 import com.coreforge.waterdeliverybackend.repository.DeliveryRepository;
 import com.coreforge.waterdeliverybackend.repository.EmployeeRepository;
 import com.coreforge.waterdeliverybackend.service.InventoryService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -97,5 +100,14 @@ public class DeliveryService {
 
         deliveryRepository.deleteById(id);
         log.info("Delivery deleted successfully, id={}", id);
+    }
+    public Page<Delivery> getDeliveries(int page, int size, Long employeeId) {
+        Pageable pageable = PageRequest.of(page, size);
+
+        if (employeeId != null) {
+            return deliveryRepository.findByEmployeeId(employeeId, pageable);
+        }
+
+        return deliveryRepository.findAll(pageable);
     }
 }

@@ -34,6 +34,10 @@ public class InventoryService {
     }
 
     public Inventory restock(Integer quantity){
+
+        if (quantity == null || quantity < 0) {
+            throw new IllegalArgumentException("Restock quantity must be at least 0");
+        }
         log.info("Restocking inventory by quantity={}", quantity);
         Inventory inventory = getInventory();
 
@@ -48,6 +52,9 @@ public class InventoryService {
     }
 
     public void consumeStock(Integer quantity){
+        if (quantity == null || quantity < 1) {
+            throw new IllegalArgumentException("Consumed quantity must be at least 1");
+        }
         log.info("Attempting to consume stock, requestedQuantity={}", quantity);
         Inventory inventory = getInventory();
 
@@ -79,6 +86,10 @@ public class InventoryService {
         return saved;
     }
     public Inventory setInventory(Integer quantity) {
+        if (quantity == null || quantity < 0) {
+            throw new IllegalArgumentException("Inventory quantity must be at least 0");
+        }
+
         log.info("Setting inventory quantity directly to {}", quantity);
 
         Inventory inventory = getInventory();
