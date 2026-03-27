@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class CreateDeliveryRequest {
 
@@ -39,4 +40,6 @@ public class CreateDeliveryRequest {
         this.date = date;
     }
 
+    public CreateDeliveryRequest(Long employeeId, Integer quantity, LocalDateTime now, String testDelivery) {
+    }
 }

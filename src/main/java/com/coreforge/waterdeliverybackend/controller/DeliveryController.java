@@ -21,13 +21,7 @@ public class DeliveryController {
 
     @PostMapping
     public Delivery createDelivery(@Valid @RequestBody CreateDeliveryRequest request) {
-        Delivery delivery = new Delivery();
-        delivery.setEmployeeId(request.getEmployeeId());
-        delivery.setQuantity(request.getQuantity());
-        delivery.setDate(request.getDate());
-        delivery.setNotes(request.getNotes());
-
-        return deliveryService.createDelivery(delivery);
+        return deliveryService.createDelivery(request);
     }
 
     @GetMapping("/employee/{employeeId}")
